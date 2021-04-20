@@ -10,7 +10,7 @@ preparar carro:
     - cd build
     - touch car.txt
   artifacts:
-    path:
+    paths:
       - build/
 
 construir carro:
