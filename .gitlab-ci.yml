@@ -21,7 +21,7 @@ construir carro:
     - echo "engine" >> car.txt
     - echo "wheels" >> car.txt
   dependencies:
-    - prep
+    - preparar carro
   artifacts:
     paths:
       - build/
@@ -33,7 +33,7 @@ assinar carro:
     - cd meta
     - echo $GITLAB_USER_NAME > author.txt
   dependencies:
-    - prep
+    - preparar carro
   artifacts:
     paths:
       - meta/
@@ -47,4 +47,5 @@ testar carro:
     - grep "engine" car.txt
     - grep "wheels" car.txt
   dependencies:
-    - build
+    - construir carro
+    - assinar carro
